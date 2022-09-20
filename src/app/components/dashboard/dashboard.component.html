@@ -1,3 +1,116 @@
-<div class="container">
-  <p>dashboard works!</p>
+<div class="container p-4">
+  <h1><i class="uil uil-apps mx-2"></i> Dashboard</h1>
+  <div class="row my-4">
+    <div class="col">
+      <div class="card green" style="width: 100%">
+        <div class="card-body">
+          <i class="uil uil-users-alt icon"></i>
+          <h1 class="text-white">{{ customers.length }}</h1>
+          <h5 class="card-title">Total Customers</h5>
+        </div>
+        <p class="cardBottom" (click)="navigateTo('/Home/Customers')">
+          More Info
+        </p>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card orange" style="width: 100%">
+        <div class="card-body">
+          <i class="uil uil-book-open icon m-1"></i>
+          <h1 class="text-white">10</h1>
+          <h5 class="card-title">Total Contacts</h5>
+        </div>
+        <p class="cardBottom" (click)="navigateTo('/Home/Contacts')">
+          More Info
+        </p>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card pink" style="width: 100%">
+        <div class="card-body">
+          <i class="uil uil-shopping-cart-alt icon"></i>
+          <h1 class="text-white">65</h1>
+          <h5 class="card-title">New Orders</h5>
+        </div>
+        <p class="cardBottom" (click)="navigateTo('/Home/404')">More Info</p>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card blue" style="width: 100%">
+        <div class="card-body">
+          <i class="uil uil-chart-pie-alt icon"></i>
+          <h1 class="text-white">153%</h1>
+          <h5 class="card-title">Bounce Rate</h5>
+        </div>
+        <p class="cardBottom" (click)="navigateTo('/Home/404')">More Info</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <div class="card top3" style="width: 100%">
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <h2 class="card-title">
+              <i class="uil uil-rocket"></i> Top 3 Customers
+            </h2>
+            <button class="btn" (click)="navigateTo('/Home/Customers')">
+              Show All
+            </button>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Name</th>
+                <th scope="col">Phone</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let customer of customers | slice: -3; index as i">
+                <th>{{ i + 1 }}</th>
+                <td>{{ customer.firstName }} {{ customer.lastName }}</td>
+                <td>{{ customer.phone }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card top3" style="width: 100%">
+        <div class="card-body">
+          <div class="d-flex justify-content-between">
+            <h2 class="card-title">
+              <i class="uil uil-star"></i> Top 3 Contacts
+            </h2>
+            <button class="btn" (click)="navigateTo('/Home/Contacts')">
+              Show All
+            </button>
+          </div>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Name</th>
+                <th scope="col">Position</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let contact of contacts; index as i">
+                <th>{{ i + 1 }}</th>
+                <td>{{ contact.name }}</td>
+                <td>{{ contact.position }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

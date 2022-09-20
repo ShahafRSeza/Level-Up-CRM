@@ -1,6 +1,119 @@
 :host {
-  background-color: #eeeff3;
+  background-color: var(--pageBg);
   display: block;
-  height: 100vh;
+}
+
+h1 {
+  color: var(--pageTitle);
+}
+
+h1 span {
+  color: var(--lightGrey);
+}
+
+h5 {
+  font-size: 12pt;
+  line-height: 0;
+  padding-bottom: 20px;
+}
+
+.green {
+  background-color: #05b875;
   color: white;
+  height: 130px;
+}
+
+.orange {
+  background-color: #ffc107;
+  color: white;
+  height: 130px;
+}
+
+.pink {
+  background-color: #e84c86;
+  color: white;
+  height: 130px;
+}
+
+.blue {
+  background-color: #1b81e5;
+  color: white;
+  height: 130px;
+}
+
+.icon {
+  font-size: 70pt;
+  float: right;
+  color: black;
+  position: absolute;
+  top: -20px;
+  right: 10px;
+  opacity: 0.1;
+  transition: all 0.3s ease-in-out;
+}
+
+.card:hover .icon {
+  opacity: 0.2;
+  transform: scale(1.05);
+}
+
+.cardBottom {
+  padding: 5px;
+  font-size: 10pt;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-top: -17px;
+  border-radius: 0 0 8px 8px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.card:hover .cardBottom {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.btn {
+  margin-top: 5px;
+  padding: 0 15px;
+  height: 40px;
+  background-color: var(--mainColor);
+  color: white;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background: var(--thirdColor) !important;
+  color: white;
+  transform: scale(1.02);
+  box-shadow: 0 14px 26px -12px var(--thirdColor50),
+    0 4px 23px 0 var(--thirdColor50), 0 8px 10px -5px var(--thirdColor25);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.top3 {
+  box-shadow: 0px 5px 12px -12px rgba(0, 0, 0, 0.29);
+  background-color: var(--light);
+  color: var(--text) !important;
+}
+
+.top3:hover {
+  border-color: var(--mainColor) !important;
+}
+
+thead th {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+tbody th,
+tbody td {
+  font-size: 14px;
+  background: var(--tr);
+  color: var(--pageTitle);
 }

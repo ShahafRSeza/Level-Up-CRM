@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Customer } from 'src/app/interfaces/Customer';
 import { CustomersServiceService } from 'src/app/services/customers-service.service';
 
 @Component({
@@ -7,9 +8,16 @@ import { CustomersServiceService } from 'src/app/services/customers-service.serv
   styleUrls: ['./aside.component.css'],
 })
 export class AsideComponent implements OnInit {
-  constructor() {}
+  customers: Customer[] = [];
+  constructor(private customersService: CustomersServiceService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.customersService
+      .getCustomers()
+      .subscribe((customersData: Customer[]) => {
+        this.customers = customersData;
+      });
+  }
 
   darkMode() {
     document.body.classList.toggle('darkMode');

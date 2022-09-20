@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
       .then((data) => {
         this.authService.setSessionData('username', data.user.email as string);
         this.authService.setSessionData('isLoggedIn', 'true');
-        this.router.navigateByUrl('/Home/Customers');
+        this.router.navigateByUrl('/Home/Dashboard');
         this.showSuccess(
           `${data.user.email as string}`,
           'Sign in successfully'
@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
           data.user.photoURL as string
         );
         this.authService.setSessionData('isLoggedIn', 'true');
-        this.router.navigateByUrl('/Home/Customers');
+        this.router.navigateByUrl('/Home/Dashboard');
         this.showSuccess(
           `Connected as ${data.user.displayName as string}`,
           'Sign in successfully'

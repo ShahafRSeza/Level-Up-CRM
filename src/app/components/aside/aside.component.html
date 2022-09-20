@@ -10,20 +10,26 @@
 
   <ul class="my-5">
     <li>
+      <a [routerLink]="'Dashboard'" routerLinkActive="active"
+        ><i class="uil uil-apps icon"></i> Dashboard
+      </a>
+    </li>
+    <li>
       <a [routerLink]="'Customers'" routerLinkActive="active"
-        ><i class="uil uil-users-alt mx-2"></i> Customers
+        ><i class="uil uil-users-alt icon"></i> Customers
+        <span class="rounded-pill">{{ customers.length }}</span>
       </a>
     </li>
     <li>
       <a [routerLink]="'Contacts'" routerLinkActive="active">
-        <i class="uil uil-book-open mx-2"></i> Contacts</a
+        <i class="uil uil-book-open icon"></i> Contacts</a
       >
     </li>
     <li>
-      <a [routerLink]="'404'"> <i class="uil uil-wallet mx-2"></i> Wallet</a>
+      <a [routerLink]="'404'"> <i class="uil uil-wallet icon"></i> Wallet</a>
     </li>
     <li>
-      <a [routerLink]="'404'"><i class="uil uil-setting mx-2"></i> Settings</a>
+      <a [routerLink]="'404'"><i class="uil uil-setting icon"></i> Settings</a>
     </li>
     <li>
       <input type="checkbox" id="darkmode-toggle" (click)="darkMode()" />
