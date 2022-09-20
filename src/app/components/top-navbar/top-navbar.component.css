@@ -1,0 +1,67 @@
+:host {
+  background-color: var(--topNavBg) !important;
+  display: block;
+  color: var(--pageTitle) !important;
+  height: 60px;
+}
+
+h1 {
+  color: var(--mainColor);
+  font-size: 20pt;
+  font-family: "Kanit", sans-serif;
+  user-select: none;
+  padding-top: 15px;
+}
+
+.logo {
+  margin-top: -10px;
+  margin-right: 4px;
+  width: 40px;
+}
+
+.userPic {
+  margin-top: -10px;
+  width: 40px;
+  border-radius: 50%;
+  outline: 1px solid var(--mainColor);
+  border: 2px solid var(--light);
+  margin-left: 100px;
+}
+
+.dropdown {
+  margin-top: 12px;
+  background-color: transparent !important;
+}
+
+button {
+  background-color: transparent !important;
+  color: var(--pageTitle);
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+button:hover,
+button:focus {
+  color: var(--mainColor) !important;
+}
+
+.dropdown-menu {
+  width: 90%;
+}
+
+.dropdown-item {
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: var(--thirdColor25) !important;
+  color: var(--mainColor) !important;
+}
+
+.dropdown-item:focus {
+  background-color: var(--more50) !important;
+  color: var(--pageTitle) !important;
+}

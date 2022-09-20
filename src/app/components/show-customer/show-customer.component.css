@@ -1,0 +1,114 @@
+:host {
+  overflow-y: auto !important;
+  overflow: auto !important;
+}
+
+::ng-deep {
+  background-color: yellow;
+}
+
+.profileTitle {
+  text-transform: capitalize;
+  color: #0566d5;
+  margin-bottom: 20px;
+}
+
+.col-3 {
+  width: 160px;
+}
+
+.card {
+  padding: 20px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.avatar {
+  outline: 1px solid var(--mainColor);
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  padding: 5px;
+  margin-bottom: 3px;
+  border-radius: 4px;
+  background-color: var(--thirdColor25);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.details {
+  padding-top: 10px;
+  font-size: 16pt;
+  margin: 0;
+  line-height: 1;
+}
+
+.details:first-child {
+  padding: 0;
+}
+
+.details span {
+  display: block;
+  color: grey;
+  text-transform: uppercase;
+  font-size: 10pt;
+  margin: 6px 0 0 0;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.notes::first-letter {
+  text-transform: capitalize;
+}
+
+.text-muted {
+  opacity: 0.5;
+}
+
+.edit {
+  width: 150px;
+}
+
+.back {
+  margin-top: 8px;
+  height: 38px;
+  background-color: transparent;
+  color: grey;
+  border-color: gray;
+}
+
+.button {
+  margin-top: 5px;
+  padding: 0 15px;
+  height: 40px;
+  background-color: var(--mainColor) !important;
+  color: white !important;
+  transition: all 0.3s;
+  border: none;
+}
+
+.button:hover {
+  background: var(--thirdColor) !important;
+  color: white !important;
+  transform: scale(1.02);
+  box-shadow: 0 14px 26px -12px var(--thirdColor50),
+    0 4px 23px 0 var(--thirdColor50), 0 8px 10px -5px var(--thirdColor25);
+}
+
+.out-line:hover {
+  border: 1px solid var(--mainColor);
+}
+
+.out-line {
+  color: var(--lightGrey);
+  border: 1px solid var(--lightGrey);
+}
+
+.btn:hover {
+  color: var(--mainColor);
+}
+
+.btn:active {
+  transform: scale(0.9);
+  transition: all 0.4s ease-in-out;
+}

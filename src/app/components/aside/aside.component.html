@@ -1,0 +1,36 @@
+<div class="container">
+  <h1>
+    <img
+      src="/assets/img/Logo.png"
+      alt="Logo"
+      width="15%"
+      class="logo"
+    />LEVELUP <span>CRM</span>
+  </h1>
+
+  <ul class="my-5">
+    <li>
+      <a [routerLink]="'Customers'" routerLinkActive="active"
+        ><i class="uil uil-users-alt mx-2"></i> Customers
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="'Contacts'" routerLinkActive="active">
+        <i class="uil uil-book-open mx-2"></i> Contacts</a
+      >
+    </li>
+    <li>
+      <a [routerLink]="'404'"> <i class="uil uil-wallet mx-2"></i> Wallet</a>
+    </li>
+    <li>
+      <a [routerLink]="'404'"><i class="uil uil-setting mx-2"></i> Settings</a>
+    </li>
+    <li>
+      <input type="checkbox" id="darkmode-toggle" (click)="darkMode()" />
+      <label for="darkmode-toggle">
+        <i class="uil uil-sun sun"></i>
+        <i class="uil uil-moon moon"></i>
+      </label>
+    </li>
+  </ul>
+</div>

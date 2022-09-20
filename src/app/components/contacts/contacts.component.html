@@ -1,0 +1,68 @@
+<div class="container p-4">
+  <div class="d-flex pagetitle">
+    <h1><i class="uil uil-book-open mx-2"></i>Contacts</h1>
+  </div>
+
+  <div class="d-flex my-4 flex-wrap align-content-center gap-5">
+    <div class="col-lg-4 input-icons">
+      <i class="uil uil-search icon"></i>
+      <input
+        class="form-control"
+        type="text"
+        placeholder="Search Contact by Name"
+        [(ngModel)]="propName"
+      />
+    </div>
+  </div>
+
+  <div *ngIf="contacts | filterContacts: 'name':propName as contacts">
+    <ng-container *ngIf="contacts.length != 0; else noContacts">
+      <div class="d-flex gap-3 flex-wrap align-items-stretch my-3">
+        <div *ngFor="let contact of contacts">
+          <div class="card h-100" style="width: 17rem">
+            <div
+              class="card-head"
+              [ngClass]="contact.category"
+              [ngStyle]="{ backgroundColor: contact.color }"
+            >
+              <img src="{{ contact.img }}" class="img" />
+            </div>
+            <div class="card-body">
+              <h5 class="name capitalize text-center">
+                {{ contact.name }}
+                <span class="position">{{ contact.position }}</span>
+              </h5>
+              <p>
+                <i class="uil uil-envelope-alt mx-1"></i>{{ contact.email }}
+              </p>
+              <ng-container *ngIf="contact.phone.length != 0; else noPhone">
+                <p *ngFor="let phone of contact.phone" class="phones">
+                  <i class="uil uil-phone mx-1"></i>{{ phone }}
+                </p>
+              </ng-container>
+              <ng-template #noPhone>
+                <p class="text-muted">
+                  <i class="uil uil-phone mx-1"></i>No Phones
+                </p>
+              </ng-template>
+              <p><i class="fa-regular fa-map mx-1"></i>{{ contact.address }}</p>
+              <p>
+                <i
+                  class="fa-solid fa-cake-candles"
+                  [ngStyle]="{ 'margin-right': '8px', 'margin-left': '5px' }"
+                ></i
+                >{{ contact.birthday | date: "dd/MM/yy" }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-template #noContacts>
+      <div class="noFound my-5">
+        <h2>We couldn't find any results</h2>
+        <img src="/assets/img/noFound.png" width="400px" />
+      </div>
+    </ng-template>
+  </div>
+</div>

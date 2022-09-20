@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "levelup-crm": {
+      "hosting": {
+        "LevelUpCrm": [
+          "levelup-crm"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "levelup-crm"
+  }
+}

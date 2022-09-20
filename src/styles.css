@@ -1,0 +1,107 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Heebo:wght@100;200;300;400;500;600;700;800;900&family=Kanit:wght@100;200;300;400;500;600;700;800;900&display=swap");
+.col-lg-2 {
+  min-width: 260px;
+}
+* {
+  font-family: "Kanit", "Heebo", sans-serif;
+}
+
+.toast-title {
+  font-weight: 500 !important;
+}
+
+.toast-container .ngx-toastr {
+  width: 350px !important;
+  box-shadow: 0 0 12px #00000050 !important;
+}
+.toast-container .ngx-toastr:hover {
+  box-shadow: 0 0 12px #000000;
+  opacity: 1;
+  cursor: pointer;
+}
+
+::selection {
+  color: var(--tr);
+  background-color: var(--thirdColor);
+}
+
+:root {
+  --mainColor: #1d82e7;
+  --secColor: #013566;
+  --thirdColor: #1171cc;
+  --thirdColor50: #1171cc50;
+  --thirdColor25: #1171cc25;
+  --pageTitle: #212529;
+  --secpageTitle: #1d82e7;
+  --light: white;
+  --lightGrey: rgb(197, 197, 197);
+  --pageBg: #ecedf2;
+  --topNavBg: #f6f6f6;
+  --th: #212529;
+  --tr: white;
+  --tableShaodw: rgba(9, 30, 66, 0.25);
+  --tableShaodw2: rgba(9, 30, 66, 0.08);
+  --more: #1d82e7;
+  --more50: #1171cc50;
+  --more25: #1171cc25;
+  --text: #212529;
+  --contactName: #212529;
+  --contactPos: #21252977;
+  --cardHover: #ecedf2;
+}
+
+.darkMode {
+  --mainColor: #1d82e7;
+  --secColor: #013566;
+  --thirdColor: #1171cc;
+  --thirdColor50: #1171cc50;
+  --thirdColor25: #1171cc25;
+  --pageBg: #191919;
+  --pageTitle: white;
+  --secpageTitle: #1d82e7;
+  --light: #212429;
+  --topNavBg: #212429;
+  --th: #3f444f;
+  --tr: #212429;
+  --inputdark: #1d82e7;
+  --tableShaodw: #191919;
+  --more: white;
+  --more50: rgba(255, 255, 255, 0.25);
+  --more25: rgba(255, 255, 255, 0.1);
+  --text: rgb(190, 190, 190);
+  --lightGrey: rgb(59, 59, 59);
+  --contactName: rgb(190, 190, 190);
+  --contactPos: rgba(190, 190, 190, 0.4);
+  --cardHover: rgba(255, 255, 255, 0.555);
+}
+
+.asideNavbar {
+  position: sticky;
+  top: 0;
+  width: 90px;
+  height: 100vh;
+}
+
+@media screen and (max-width: 1200px) {
+  .sideBar {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .pagetitle {
+    justify-content: space-between;
+    margin: 0 0 20px 0;
+    padding: 0;
+  }
+
+  .addCustomer {
+    margin: 0 !important;
+  }
+
+  .sideBar {
+    display: none;
+  }
+}

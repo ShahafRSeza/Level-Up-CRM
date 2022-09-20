@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="d-flex justify-content-end align-items-center">
+    <div class="dropdown d-flex justify-content-end">
+      <button
+        class="btn btn-secondary dropdown-toggle"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <img [src]="getUserPhoto()" class="userPic mx-2" />
+        {{ getUsername() }}
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li>
+          <span class="dropdown-item" (click)="logOut()"
+            ><i class="uil uil-sign-out-alt mx-1"></i> Logout</span
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

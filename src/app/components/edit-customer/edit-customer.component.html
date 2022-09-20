@@ -1,0 +1,226 @@
+<ng-container *ngFor="let customer of customers">
+  <ng-container *ngIf="customer.id == customerId">
+    <div class="container p-4">
+      <h1>
+        <i class="uil uil-user"></i> Edit {{ customer.firstName }}'s Profile
+      </h1>
+      <form class="row g-3" #addCustomerForm="ngForm">
+        <div class="col-5">
+          <label for="firstName" class="form-label"
+            >First Name <span class="text-secondary">*</span></label
+          >
+          <input
+            type="text"
+            class="form-control capitalize"
+            id="firstName"
+            name="firstName"
+            ngModel
+            minlength="2"
+            maxlength="20"
+            [(ngModel)]="customer.firstName"
+            required
+            #firstName="ngModel"
+          />
+          <p
+            class="small text-danger"
+            *ngIf="firstName.invalid && firstName.dirty"
+          >
+            First name must be at least 2 characters
+          </p>
+        </div>
+        <div class="col-5">
+          <label for="lastName" class="form-label"
+            >Last Name <span class="text-secondary">*</span></label
+          >
+          <input
+            type="text"
+            class="form-control capitalize"
+            id="lastName"
+            name="lastName"
+            ngModel
+            [(ngModel)]="customer.lastName"
+            required
+            minlength="2"
+            maxlength="15"
+            required
+            #lastName="ngModel"
+          />
+          <p
+            class="small text-danger"
+            *ngIf="lastName.invalid && lastName.dirty"
+          >
+            Last name must be at least 2 characters
+          </p>
+        </div>
+        <div class="col-2">
+          <label for="gender" class="form-label"
+            >Gender <span class="text-secondary">*</span></label
+          >
+          <select
+            id="gender"
+            class="form-select"
+            name="gender"
+            ngModel
+            [(ngModel)]="customer.gender"
+            required
+            #gender="ngModel"
+          >
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+        <div class="col-4">
+          <label for="email" class="form-label"
+            >Email <span class="text-secondary">*</span></label
+          >
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            ngModel
+            [(ngModel)]="customer.email"
+            email
+            required
+            #email="ngModel"
+            minlength="5"
+            maxlength="30"
+          />
+          <p class="small text-danger" *ngIf="email.invalid && email.touched">
+            Email invalid
+          </p>
+        </div>
+        <div class="col-4">
+          <label for="phone" class="form-label"
+            >Phone <span class="text-secondary">*</span></label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="phone"
+            name="phone"
+            ngModel
+            [(ngModel)]="customer.phone"
+            required
+            #phone="ngModel"
+            minlength="9"
+            maxlength="11"
+          />
+          <p class="small text-danger" *ngIf="phone.invalid && phone.touched">
+            Phone invalid
+          </p>
+        </div>
+        <div class="col-4">
+          <label for="address" class="form-label"
+            >Address <span class="text-muted"> (optional)</span></label
+          >
+          <input
+            type="text"
+            class="form-control"
+            id="address"
+            name="address"
+            ngModel
+            [(ngModel)]="customer.address"
+            #Address="ngModel"
+            maxlength="35"
+          />
+        </div>
+        <ng-container *ngIf="customer.gender === 'Male'">
+          <div class="col-12">
+            <label
+              for="phone"
+              class="form-label"
+              style="width: 120px"
+              name="avater"
+              ngModel
+              [(ngModel)]="customer.avater"
+              required
+              >Select Avater <span class="text-secondary">*</span></label
+            >
+            <div class="col">
+              <ng-container *ngFor="let avatar of maleAvatars">
+                <input
+                  class="checkbox-tools"
+                  type="radio"
+                  name="avater"
+                  ngModel
+                  [(ngModel)]="customer.avater"
+                  id="{{ avatar }}"
+                  value="{{ avatar }}"
+                  required
+                />
+                <label class="for-checkbox-tools" for="{{ avatar }}">
+                  <img
+                    src="{{ avatar }}"
+                    width="70px"
+                    class="uil uil-vector-square"
+                /></label>
+              </ng-container>
+            </div>
+          </div>
+        </ng-container>
+        <!--Female Avatar Selector-->
+        <ng-container *ngIf="customer.gender === 'Female'">
+          <div class="col-12">
+            <label
+              for="phone"
+              class="form-label"
+              style="width: 120px"
+              name="avater"
+              ngModel
+              required
+              [(ngModel)]="customer.avater"
+              >Select Avater <span class="text-secondary">*</span></label
+            >
+            <div class="col">
+              <ng-container *ngFor="let avatar of femaleAvatars">
+                <input
+                  class="checkbox-tools"
+                  type="radio"
+                  name="avater"
+                  ngModel
+                  required
+                  [(ngModel)]="customer.avater"
+                  id="{{ avatar }}"
+                  value="{{ avatar }}"
+                />
+                <label class="for-checkbox-tools" for="{{ avatar }}">
+                  <img
+                    src="{{ avatar }}"
+                    width="70px"
+                    class="uil uil-vector-square"
+                /></label>
+              </ng-container>
+            </div>
+          </div>
+        </ng-container>
+        <div class="col-12">
+          <label for="notes" class="form-label"
+            >Notes <span class="text-muted">(optional)</span></label
+          >
+          <textarea
+            type="text"
+            class="form-control capitalize"
+            id="notes"
+            name="notes"
+            ngModel
+            [(ngModel)]="customer.notes"
+          ></textarea>
+        </div>
+        <div class="col d-flex justify-content-between">
+          <button
+            type="submit"
+            (click)="updateCustomer(customer)"
+            class="btn btn-primary"
+            [disabled]="addCustomerForm.invalid"
+          >
+            Update Profile
+          </button>
+          <a (click)="cancel()" class="btn btn-no-borders ms-auto out-line"
+            >cancel</a
+          >
+        </div>
+      </form>
+    </div>
+  </ng-container>
+</ng-container>

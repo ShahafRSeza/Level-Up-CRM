@@ -1,0 +1,67 @@
+<div class="card">
+  <div class="row">
+    <div class="col-3">
+      <img src="{{ customer.avater }}" class="avatar" />
+      <button
+        class="btn button edit my-2"
+        (click)="navigateTO('/Home/Customers/' + customer.id)"
+      >
+        <i class="uil uil-edit mx-1"></i> Edit Profile
+      </button>
+      <button class="btn out-line edit" (click)="deleteCustomer(customer)">
+        <i class="uil uil-trash-alt mx-1"></i> Delete Profile
+      </button>
+    </div>
+    <div class="col">
+      <div class="row">
+        <div class="col-3 mx-4">
+          <p class="details capitalize">
+            <span>Full Name</span> {{ customer.firstName }}
+            {{ customer.lastName }}
+          </p>
+          <p class="details"><span>Phone</span> {{ customer.phone }}</p>
+        </div>
+        <div class="col">
+          <p class="details">
+            <span>joined on</span> {{ customer.date | date: "dd/MM/yyyy" }}
+          </p>
+          <p class="details capitalize">
+            <span>Gender</span> {{ customer.gender }}
+            <ng-container *ngIf="customer.gender === 'Female'"
+              ><i class="uil uil-venus"></i
+            ></ng-container>
+            <ng-container *ngIf="customer.gender === 'Male'"
+              ><i class="uil uil-mars"></i
+            ></ng-container>
+          </p>
+        </div>
+      </div>
+
+      <div class="col my-3 mx-4">
+        <p class="details"><span>Email</span> {{ customer.email }}</p>
+        <p class="details">
+          <span>Address</span>
+          <ng-container *ngIf="customer.address.length > 0">
+            <div class="notes">
+              {{ customer.address }}
+            </div>
+          </ng-container>
+          <ng-container *ngIf="customer.address.length == 0"
+            ><p class="text-muted">No Address Provided</p></ng-container
+          >
+        </p>
+        <p class="details">
+          <span>notes</span>
+          <ng-container *ngIf="customer.notes.length > 0">
+            <div class="notes">
+              {{ customer.notes }}
+            </div>
+          </ng-container>
+          <ng-container *ngIf="customer.notes.length == 0"
+            ><p class="text-muted">No Notes were given</p></ng-container
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

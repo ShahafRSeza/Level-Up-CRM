@@ -1,0 +1,69 @@
+<div
+  class="container d-flex justify-content-center h-100 align-content-center flex-wrap flex-column"
+>
+  <div class="welcomeBox row g-0 m-0">
+    <div class="col-7 left">
+      <div class="inner-container text-center">
+        <h1>
+          <img src="/assets/img/BlueLogo.png" alt="Logo" class="logo" />
+          LEVEL UP <span>CRM</span>
+        </h1>
+        <button class="googleBtn" (click)="submitLoginWithGoogle()">
+          <img src="/assets/img/googleLogo.png" class="googleLogo" />
+          Sign up with Google
+        </button>
+        <p class="or">OR LOG IN WITH EMAIL</p>
+        <form #loginForm="ngForm" (ngSubmit)="submitLogin()">
+          <input
+            type="text"
+            placeholder="Your Email"
+            [(ngModel)]="user.email"
+            #email="ngModel"
+            required
+            email
+            ngModel
+            minlength="5"
+            maxlength="90"
+            name="email"
+            id="email"
+            [ngClass]="{
+              invalid: email.invalid && email.dirty,
+              valid: email.valid && email.dirty
+            }"
+          />
+
+          <span class="input-icons">
+            <input
+              type="password"
+              placeholder="Your Password"
+              [(ngModel)]="user.password"
+              #password="ngModel"
+              required
+              ngModel
+              name="password"
+              id="password"
+              minlength="6"
+              [ngClass]="{
+                invalid: password.invalid && password.dirty,
+                valid: password.valid && password.dirty
+              }"
+            />
+          </span>
+
+          <button class="loginBtn my-4" type="submit">
+            Log in <i class="uil uil-angle-right-b"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="col right">
+      <img src="/assets/img/Login.png" width="450" class="welcomeImg" />
+    </div>
+  </div>
+  <p class="rights">
+    Made by
+    <span (click)="goToLink('//www.linkedin.com/in/shahafseza/')"
+      >Shahaf Seza</span
+    >
+  </p>
+</div>

@@ -1,0 +1,14 @@
+<div class="row g-0">
+  <div class="col asideNavbar sideBar">
+    <app-aside></app-aside>
+  </div>
+  <div class="col-lg-10" [ngStyle]="{ 'background-color': 'var(--pageBg)' }">
+    <app-top-navbar
+      [ngClass]="'sticky-top'"
+      style="box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px"
+    ></app-top-navbar>
+    <div class="site">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
