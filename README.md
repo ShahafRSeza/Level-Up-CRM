@@ -20,3 +20,6 @@ npm i
 ```
 ng serve -o
 ```
+
+## Screenshots
+![Screenshot](https://i.postimg.cc/Sq5gQCc0/2022-09-29-3-34-09.png)
