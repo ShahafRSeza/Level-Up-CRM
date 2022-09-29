@@ -23,3 +23,6 @@ ng serve -o
 
 ## Screenshots
 ![Screenshot](https://i.postimg.cc/Sq5gQCc0/2022-09-29-3-34-09.png)
+![Screenshot](https://i.postimg.cc/3YvnkNZk/2022-09-29-3-34-09-1.png)
+![Screenshot](https://i.postimg.cc/qvQ8HPH3/2022-09-29-3-35-09.png)
+![Screenshot](https://i.postimg.cc/DzZ1vx7Y/2022-09-29-3-35-09-1.png)
